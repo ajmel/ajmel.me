@@ -1,0 +1,23 @@
+		body {
+			font-family: arial;
+			background-color: white;}
+		.education {
+			font-style: italic;}
+		.schoolname {
+			border: 3px solid;
+			max-width: 450px;
+			padding: 10px;}
+		.schoolpics {
+			vertical-align: middle;}
+		a {
+			text-decoration: none;}
+		a: hover {
+			text-decoration: underline;}
+		.nav {
+			display: inline;
+			padding: 10px;}
+		td {
+			border: 1px solid;
+			padding: 2px;}
+		.align-center {
+			text-align: center;}
