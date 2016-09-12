@@ -50,55 +50,72 @@
       </div>
     </div>
 
-	<!-- +++++ Posts Lists +++++ -->
-	<!-- +++++ First Post +++++ -->
-	<div id="grey">
+	
+	<!-- +++++ Post +++++ -->
+	<div id="white">
 	    <div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2">
-					<p><img src="assets/img/user.jpg" width="50px" height="50px"> <ba>Alvaro Melendez</ba></p>
+					<p><img src="assets/img/user.png" width="50px" height="50px"> <ba>Alvaro Melendez</ba></p>
 					<p><bd>September 11, 2016</bd></p>
 					<h4>First Blog Post feat. Chiquicycle!</h4>
 					<p><img class="img-responsive" src="assets/img/portfolio/chiqui_frame.png" alt="" align="middle"></p>
 					<p>As one of my personal projects, I've decided to work on Chiquicycle: an electric bike!</p>
 					<p>Chiquicycle once used to work but now some parts need to be rebuilt and some things need to be bought to make it function again.</p>
 					<p>Chiquicylce has from an old Razor pocket bike frame, a Turnigy Brushless SK3 245Kv electric motor, and a 12s2p 26650 power cell battery pack.</p>
-					<p><a href="chiquicycle.html">Continue Reading...</a></p>
+					<p>Since I still have not managed to get the frame back and am still figuring out what s and p configuration to use with the battery pack, I've been doing some simulations using MATLAB instead.</p>
+					<p>I wrote some MATLAB code to estimate the performance of Chiquicycle. In particular, extimating its maximum speed and range.
+					In order to do this I first calculated all of the relevant forces on the bike, namely force due to rolling (F_r) and the force due to air drag (F_d).</p>
+					<p>Since this is a simplified model, the total force (F_t) acting on the bike is thus,</p>
+					<br>F_t = F_r + F_d
+					<p></p>
+					<p>Assuming that the bike weighs 90kg with me on it,</p>
+					<br>F_r = C_rr*F_n;
+					<p></p>
+					<p>where C_rr is a dimensionless coefficient of rolling resistance(which for a Typical BMX bike is 0.015) and F_n is the normal force (N).</p>
+					<br>F_d = 0.5*v^2*rho*C_d*A;
+					<p></p>					
+					<p>where v is the velocity (m/s), rho is the density of air (kgm^-3), C_d is a dimensionless coefficient of air drag (which I approximated as 1.1) and
+					A is the area (m^2, which for an average human body is 1.9).</p>
+					<p>Now, to calculate the power required for me to go at every speed is</p>
+					<br>P = F_t*v
+					<p></p>
+					<p>This gives me the blue curve shown below:</p>
+					<img src="assets/img/portfolio/drag_power.jpg" width="" height="">
+					<p></p>
+					<p>Now for the motor power. The motor has a Kv (rpm/V) of 245, and this can be converted into the motor's Kt (Nm^-1 per Amp) which will allow me to calculate the power.</p>
+					<br>Kt = 1/((2*pi/60)*Kv)
+					<p></p>
+					<p>I can now calculate the motor's current by using Ohm's law</p> 
+					<br>I = (pack_voltage-omega*Kt)/motor_resistance
+					<p></p>
+					<p>where omega*Kt is the back emf of the motor, and omega is the velocity divided by the wheel's radius.</p>
+					<p>Now, the motor's torque, motor_torque = motor_current*Kt and finally, motor_power = motor_torque/wheel_radius</p>
+					<p>This gives me the red curve shown below:</p>
+					<img src="assets/img/portfolio/motor_power.jpg" width="" height="">
+					<p></p>
+					<p>Now I can plot both graphs together and find out an estimate for the maximum speed:</p>
+					<img src="assets/img/portfolio/drag_motor_power.jpg" width="" height="">
+					<p></p>
+					<p>Looks like the maximum speed is around 26km/h (~ 16mph)!</p>
+					<p>Now that I know the power required to stay at that speed I can estimate the range of the bike by dividing the pack's Wh by that power and the multiplying it by the speed.</p>
+					<br>range = pack_Wh/(1.1*drag_power)*v (factor of 1.1 assuming a 90% efficient powertrain)
+					<p>Since I plan on using 26650 cylindrical cells with a nominal voltage of 3.3 and capacity of 2.5 Ah, I can calculate the pack's Wh. Using a 12s2p configuration,</p>
+					<br>pack_Wh = (12*3.3)*(2*2.5) = 198 Wh
+					<p></p>
+					<p>With this, I get the following graph:</p>
+					<img src="assets/img/portfolio/speed_range.jpg" width="" height="">
+					<p></p>
+					<p>Looks like the range is about 7km (~ 4.4 miles) if I stay at 10km/h (6.25 mph) around 2km (~ 1.25 miles) at max. speed. (Not bad!)</p>
+					<p><bt>TAGS: <a href="">Chiquicycle</a> - <a href="">EVs</a></bt></p>
+					<hr>
+					<p><a href="blog.html"><-- Back</a></p>
 				</div>
 
 			</div><!-- /row -->
 	    </div> <!-- /container -->
-	</div><!-- /grey -->
+	</div><!-- /white -->
 	
-	<!-- +++++ Second Post +++++ -->
-<!--	<div id="white">
-	    <div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<p><img src="assets/img/user.png" width="50px" height="50px"> <ba>Alvaro Melendez</ba></p>
-					<p><bd>January 3, 2014</bd></p>
-					<h4>An Image Post</h4>
-					<p><img class="img-responsive" src="assets/img/blog01.jpg" alt=""></p>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					<p><a href="blog01.html">Continue Reading...</a></p>
-				</div>
-
-			</div><!-- /row -->
-	    <!--</div>--> <!-- /container -->
-	<!--</div>--> <!-- /white --> 
-
-	<!-- +++++ Third Post +++++ -->
-	<div id="white">
-	    <div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<p class="bq"><i>"Do not pray for an easy life, pray for the strength to endure a difficult one."</i></p>
-					<p><b>- Bruce Lee</p>
-				</div>
-
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /grey -->
 	
 	
 	
