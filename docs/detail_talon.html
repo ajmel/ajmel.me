@@ -96,13 +96,15 @@
 			<div class="row top-line animate-box">
 				<div class="col-md-6  col-md-push-2 text-justify fh5co-heading">
 
-					<h2>FSAE Electrical Enclosures</h2>
-					<p>Designed, tested, and validated custom electronics enclosures that are light and protect against, dust, water and EMI.</p>
+					<h2>TALON</h2>
+					<p>TALON is an innovative safety utility knife made for construction workers that automatically retracts upon contact with the skin to
+						prevent further injury.
+					</p>
 					
 					<div class="role">
 						<h3>Responsibilities</h3>
 						<ul>
-							<li>Subteam Lead</li>
+							<li>Mechanical Design Leader</li>
 							<li>Designer</li>
 							<li>Manufacturing and Testing</li>
 						</ul>
@@ -114,55 +116,49 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-justify">
 				
-					<p>One of the goals for the MY18 vehicle was to decrease its mass and ensure the reliability of the electrical system.
-					As such, the electrical enclosures were designed, tested and validated to ensure that they met numerous requirements such as, accesibility,
-					dust and water ingress protected, EMI shielding, well mounted and easy to service.</p>
-					
-					<p>The enclosures were machined from aluminum billet to a wall thickness of 0.050". The use of steel PEM inserts allows part count to be 
-					minimized, eases serviceability and makes the enclosures lighter than the previous year's 3D-printed enclosures. Enclosures are sealed 
-					using O-rings, aluminum tape, and waterjet-cut lids. Below is a series of images that outlines the process.</p>
-					
-					<p>The process began by first exploring the potential ways of providing dust and water ingress protection to the enclosures.
-					The team had used gaskets in the past, but that required a large number of bolts to be used around the enclosures perimeter. Attention then
-					shifted towards O-rings, given that they are cheap, easy to replace and can be made for numerous applications. We decided to go forward
-					with O-rings since a aluminum enclosure with a waterjet-cut lid would provide a static face seal. The Parker O-ring handbook was utilized to
-					determine the best O-ring for our application, along with the recommended amount of squeeze and O-ring gland profile. A prototype was machined to
-					validate the design and it turned out to be successful.</p>
-					
-					<p class="animate-box"><img src="images/FSAEenclosures_CANnodeTest.jpg" class="img-responsive"></p>
-					<i>Preliminary tests done in order to validate the O-ring gland design.</i>
-
-					<p>The next steps in the process involved looking into EMI shielding. This was achieved by creating a "wand" that, when connected to an oscilloscope
-						generates a wave that can be observed when placed next to a source of EMI. Various thicknesses of aluminum were tested in order to determine the
-						minimum wall thickness required to attenuate the EMI. A sheet of 0.020" was found to attenuate the noise by ten-fold. This was used in conjuction with
-						testing our machining requirements in order to determine the minimum wall thickness. Machining anything thinner than 0.030" was starting to be problematic
-						as the tool would deflect the stock and result in unequal wall thicknesses. We decided to use 0.050" thick walls to be
+					<p>This project was part of MIT's Mechanical Engineering senior capstone class 2.009: Product Engineering Processes. 
 					</p>
-					<p class="animate-box"><img src="images/FSAEenclosures_CANnode.jpg" class="img-responsive"></p>
-					<i>The CAN node is responsible for registering the brake, acceleration, and other data values from the throttles to the ECU.</i>
-					<p class="animate-box"><img src="images/FSAEenclosures_megalv.jpg" class="img-responsive"></p>
-					<i>The ECU distributes power to all other boards and is in charge of giving the vehicle's torque commands.</i>
-					<p class="animate-box"><img src="images/FSAEenclosures_bb_old.jpg" class="img-responsive"></p>
-					<i>The previous "button bank" was used to debug and change the vehicle's state before it was re-designed for better packaging.</i>
-					<p class="animate-box"><img src="images/FSAEenclosures_dash.jpg" class="img-responsive"></p>
-					<i>The dashboard provides the driver with useful information such as battery pack state-of-charge, cell temperature and power consumption.</i>
-					<p class="animate-box"><img src="images/FSAEenclosures_sensornodes.jpg" class="img-responsive"></p>
-					<i>Sensor nodes collect vehicle data and gets transmitted to a remote laptop for later use and analysis.</i>
-					<p class="animate-box"><img src="images/FSAEenclosures_bb_new.jpg" class="img-responsive"></i>
-					<i>The "button bank", allows the driver to set the vehicle into different states for driving and debugging.</i>
-					<p class="animate-box"><img src="images/FSAEenclosures_deflorez_me.jpg" class="img-responsive"></p>
-					<i>Me at the MIT Luis de Florez Design competition.</i>
-				
+					
+					<p>The design involved many hours of consultation with MIT professors, makerspace and shop managers and construction workers.</p>
+					
+					<p>The process began by first brainstorming as many ideas as possible around the class' theme: danger. The idea selection process considered many factors
+						to best determine as a team what the best idea to pursue is. Some of the factors considered included, feasibility, impact, workload and general interest.
+					</p>
+					<p>Once the final idea was selected, the team was composed of numerous sub-teams: mechanism, electronics, testing, research, product vision and industrial design.
+						During the early stages of development, we thought of two possible ways for the blade to prevent further injury. The first, which we called the retraction design,
+						works by both retracting and rotation the blade inside the housing. The second, which we called the sheath design, involved a sheath to be deployed to cover the blade
+						to prevent further injury.
+						At the beginning of the process, my primary responsibility was to keep the team organized and lead the development for the retraction approach for the mechanism. This involved
+						the development and testing of the blade to simulate the performance. To quantify the performance, we used a high speed camera at MIT's Edgerton Center. The tests showed a retraction
+						speed of around 4-7 milliseconds.
+					</p>
+					<p>After numerous hours of research and consultation the team decided to move forward with the retracting blade idea. The target market for the idea is construction
+						workers as multiple interviews with them across Cambridge revealed the frequency at which they injure themselves with a utility knife.
+					</p>
+					<p class="animate-box"><img src="images/talon_ideation.jpg" class="img-responsive"></p>
+					<i>Brainstorming potential ideas with the team. Everyone's opinion on the team was taken into account before moving forward with short-listing.</i>
+
+					<p class="animate-box"><img src="images/talon_laptop.jpg" class="img-responsive"></p>
+					<i>Me and my teammates reviewing the material before our consultation with MIT staff.</i>
+
+					<p class="animate-box"><img src="images/talon_electronics.jpg" class="img-responsive"></p>
+					<i>The electronics form a vital part in the functioning of Talon.</i>
+					<p class="animate-box"><img src="images/talon_highspeed.jpg" class="img-responsive"></p>
+					<i>High-speed video at MIT's Edgerton Center to help us quantify the retraction time of the blade.</i>
+					<p class="animate-box"><img src="images/talon_storyboard.jpg" class="img-responsive"></p>
+					<i>This storyboard provides helpful insight for the user to understand the function of the knife.</i>
+					<p class="animate-box"><img src="images/talon_presentation.jpg" class="img-responsive"></p>
+					<i>Presenting the concept of Talon at an early stage in development.</i>
 
 					<div class="row row-pt-md portfolio-navigation">
 						<div class="col-xs-4 text-left">
-							<a href="detail_talon.html" class="btn btn-primary btn-outline"><i class="icon-chevron-left"></i> TALON </a>
+							<a href="#" class="btn btn-primary btn-outline"><i class="icon-chevron-left"></i> Prev </a>
 						</div>
 						<div class="col-xs-4 text-center">
-							<a href="index.html#FSAEenclosures" class="btn btn-primary btn-outline"><i class="icon-grid2"></i> Back to Gallery</a>
+							<a href="index.html#talon" class="btn btn-primary btn-outline"><i class="icon-grid2"></i> Back to Gallery</a>
 						</div>
 						<div class="col-xs-4 text-right">
-							<a href="detail_engine.html" class="btn btn-primary btn-outline">Stirling Engine <i class="icon-chevron-right"></i></a>
+							<a href="detail_FSAEenclosures.html" class="btn btn-primary btn-outline"> FSAE Electrical Enclosures  <i class="icon-chevron-right"></i></a>
 						</div>
 					</div>
 				</div>
